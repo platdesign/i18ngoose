@@ -1,15 +1,32 @@
 {
   "name": "i18ngoose",
   "description": "mongoose plugin for i18n",
-  "author": "Christian Blaschke <mail@platdesign.de>",
+  "author": {
+    "name": "Christian Blaschke",
+    "email": "mail@platdesign.de",
+    "url": "https://github.com/platdesign"
+  },
+  "homepage": "https://github.com/platdesign/i18ngoose",
   "version": "0.0.0",
   "dependencies": {
     "mongoose": "^4.4.15",
     "obj-parse": "^0.2.0"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:platdesign/i18ngoose.git"
+  },
   "devDependencies": {
     "code": "^2.3.0",
     "mocha": "^2.4.5"
-  }
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "i18n",
+    "data",
+    "npm",
+    "javascript"
+  ],
+  "license": "MIT"
 }
