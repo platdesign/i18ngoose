@@ -34,7 +34,22 @@ describe('i18n', () => {
 			},
 			huhu: {
 				type: String
-			}
+			},
+
+			subdoc: [{
+				testA: {
+					type: String,
+					i18n: true,
+					default: '123'
+				},
+				testB: {
+					type: String,
+					i18n: true
+				},
+				testC: {
+					type: String
+				}
+			}]
 		})
 
 		schema.plugin(i18ngoose, {
@@ -98,7 +113,7 @@ describe('i18n', () => {
 			});
 		}
 
-	})
+	});
 
 
 	describe('Model setting attributes', () => {
@@ -125,6 +140,34 @@ describe('i18n', () => {
 
 	});
 
+
+
+	describe('subdocuments', () => {
+
+		it('should... ', () => {
+			var model = new Model();
+
+			model.set({
+				subdoc: [{
+					testB: {
+						de: '123'
+					},
+					testC: '345'
+				}]
+			});
+
+			var submodel = model.subdoc[0];
+
+			expect(submodel.testA.de).to.equal('123');
+			expect(submodel.testA.en).to.equal('123');
+			expect(submodel.testA.tr).to.equal('123');
+
+			expect(submodel.testB.de).to.equal('123');
+
+			expect(submodel.testC).to.equal('345');
+		});
+
+	});
 
 
 
