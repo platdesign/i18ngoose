@@ -7,7 +7,7 @@
     "url": "https://github.com/platdesign"
   },
   "homepage": "https://github.com/platdesign/i18ngoose",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "mongoose": "^4.4.15",
     "obj-parse": "^0.2.0"
