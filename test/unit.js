@@ -144,7 +144,7 @@ describe('i18n', () => {
 
 	describe('subdocuments', () => {
 
-		it('should... ', () => {
+		it('should create subdocument arrays', () => {
 			var model = new Model();
 
 			model.set({
@@ -167,7 +167,41 @@ describe('i18n', () => {
 			expect(submodel.testC).to.equal('345');
 		});
 
+		it('should translate subdocument arrays', () => {
+
+			var model = new Model();
+
+			model.set({
+				subdoc: [{
+					testB: {
+						de: '1',
+						en: '2',
+						tr: '3'
+					}
+				}]
+			});
+
+			var de = model.toObjectTranslated({ translation: 'de' });
+			var desubdoc = de.subdoc[0];
+
+			expect(desubdoc.testB).to.equal('1');
+
+			var en = model.toObjectTranslated({ translation: 'en' });
+			var ensubdoc = en.subdoc[0];
+
+			expect(ensubdoc.testB).to.equal('2');
+
+			var tr = model.toObjectTranslated({ translation: 'tr' });
+			var trsubdoc = tr.subdoc[0];
+
+			expect(trsubdoc.testB).to.equal('3');
+
+
+		});
+
 	});
+
+
 
 
 
