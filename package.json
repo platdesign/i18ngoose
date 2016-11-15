@@ -28,5 +28,8 @@
     "npm",
     "javascript"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "scripts":{
+    "test":"NODE_ENV=test mocha"
+  }
 }
