@@ -2,7 +2,7 @@
 
 Mongoose plugin for internationalization.
 
-
+[![Build Status](https://travis-ci.org/platdesign/i18ngoose.svg?branch=master)](https://travis-ci.org/platdesign/i18ngoose)
 
 #Install
 
